@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Futura Bold';
+    src: url('JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Outline';
+    src: url('Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.password-form {
+    text-align: center;
+    margin-top: 200px;
+    background-color: transparent;
+}
+
+.password-form input[type="password"],
+.password-form button {
+    padding: 8px;
+    margin: 5px;
+    border: 2px solid #fff; 
+    border-radius: 5px; 
+    font-family: 'Futura Bold', sans-serif; 
+    color: #000000; 
+    background-color: #fff;
+    transition: background-color 0.3s;
+    margin-bottom: 30px;
+}
+.password-form button:hover {
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+.register-text {
+    font-family: 'Outline', sans-serif;
+    text-align: center;
+    margin: 20px;
+    font-size: 14px;
+    color: #8c8c8c;
+    margin-top: 10px;
+}
+
+
+#password {
+    margin-bottom: 10px; 
+}
+
+
+.register-text a {
+    text-decoration: underline;
+    color: white;
+} 
+
+
+
+.content {
+    display: none;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+}
+
+
+#closeIntroModal {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.timer-container {
+    text-align: center;
+    position: relative;
+    margin-top: 55px;
+}
+
+
+.timer-container h2 {
+    margin: 0;
+}
+
+
+#timer {
+    font-size: 16px; 
+    font-family: 'Consolas', monospace; 
+    font-weight: bold;
+    color: #ff0000;
+    position: relative; 
+}
+
+
+.music-player {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    padding-bottom: 50px;
+}
+
+.music-player:last-child {
+    margin-bottom: 5px;
+}
+
+.audio-container {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #0a0a0a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-controls audio {
+    width: 100%;
+    max-width: 200px;
+}
+
+.audio-controls button {
+    background-color: #444;
+    color: #ffd70f;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.audio-controls button:hover {
+    background-color: #555;
+}
+
+h2{
+    font-family: 'Futura Bold';
+    font-size: 16px;
+    color: #ffd70f;
+}
+
+h3 {
+    font-family: 'Futura Bold', sans-serif;
+    font-size: 16px;
+    color: #fba904;
+    margin-bottom: 10px;
+}
+
+
+
+.footer {
+    font-family: "Consolas", monospace;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+@media (min-width: 1024px) {
+    .header img:nth-child(2) {
+        max-width: 45%;
+        float: right;
+        margin-left: 20%;
+    }
+
+    body {
+        background-image: url('https://walkerworld.ai/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-26-at-08.43.55-1.jpeg');
+    }
+
+    .music-player {
+        margin-top: 20px;
+    }
+
+    .timer-container {
+        text-align: center;
+        position: relative;
+        margin-top: 175px;
+    }
+}
+
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://walkerworld.ai/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-26-at-08.43.55-1.jpeg'); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 6px solid #f3f3f3; 
+  border-top: 6px solid #24ff48; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite; 
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

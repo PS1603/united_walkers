@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7BR9XVZK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9G7BR9XVZK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            background-image: url('https://walkerworld.ai/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-26-at-08.43.55-1.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 20px;
+            padding: 10px;
+            height: 100vh;
+            font-family: serif;
+        }
+
+        .header {
+            text-align: center;
+            padding: 0px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            width: 100%;
+        }
+
+        .header img {
+            max-width: 100%;
+        }
+        .content {
+        margin-top: 100px;
+        }
+
+        .header img:nth-child(2) {
+        position: absolute;
+        top: 5px;
+        left: 57px; 
+        z-index: 999;
+        width: 70%;
+        }
+
+        
+        @media (max-width: 768px) {
+            .music-player audio {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+          
+    </style>
+</head>
+<body>
+  
+  <div id="passwordPage">
+      <div id="passwordForm" class="password-form">
+          <h2>Enter the password to access the site</h2>
+          <form id="accessForm">
+              <input type="password" id="password" placeholder="Enter password">
+              <button type="submit">Submit</button>
+          </form>
+          <a class="register-text" href="https://form.walkerworld.repl.co" id="registerLink">Register to know the password</a>
+      </div>
+  </div>
+
+  <div id="loadingScreen" style="display: none;">
+      <div class="loader"></div>
+  </div>
+
+  <div id="content" class="content" style="display: none;">
+      <div id="overlay" class="overlay"></div>
+
+      <div id="introModal" class="modal">
+          <div class="modal-content">
+              <p>Audio files will be available on November 9, 2023, at 11:25 AM CET.</p>
+              <button id="closeIntroModal">OK</button>
+          </div>
+      </div>
+
+      <div class="timer-container">
+            <h2>-</h2>
+            <div id="timer"></div>
+      </div>
+
+      <div class="container">
+          <div class="header">
+              <img src="photo_2023-10-30_21-40-12.jpg" alt="Heading Image">
+              <img src="1-WW-Logo-1536x480.png" alt="Heading Image overlap">
+          </div>
+
+          <div class="music-player">
+               <h3>1. Welcome to Walkerworld</h3>
+                 <audio controls>
+                     <source src="Welcome to Walkerworld(MP3_320K).mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>2. Heart over Mind (with Daya)</h3>    
+                 <audio controls>
+                     <source src="Heart over Mind(MP3_320K).mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>3. Spectre 2.0 (with Steve Aoki)</h3>    
+               <audio controls>
+                   <source src="Spectre 2.0(MP3_320K).mp3" type="audio/mpeg">
+                   Your browser does not support the audio element.
+               </audio>
+                 <br>
+                 <h3>4. Better Off (Alone, Pt.III)</h3> 
+                 <audio controls>
+                     <source src="Alan Walker - Better Off (Alone, Pt. III).mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>5. Endless Summer (with Zak Abel)</h3>
+                 <audio controls>
+                     <source src="Alan Walker - Endless Summer.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>6. Hero (with Sasha Alex Sloan)</h3>
+                 <audio controls>
+                     <source src="Alan Walker - Hero.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>7. Born To Ride (with Sophie Stray)</h3>
+                 <audio controls>
+                     <source src="Born to Ride(MP3_320K).mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>8. Yesterday (with Ali Gatie)</h3>
+                 <audio controls>
+                     <source src="Yesterday(MP3_320K).mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>9. Land Of The Heroes (with Sophie Stray)</h3>
+                 <audio controls>
+                     <source src="Alan Walker - Land Of The Heroes.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <br>
+                 <h3>10. Darkride</h3>
+                 <audio controls>
+                     <source src="Darkride(MP3_320K).mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+
+          </div>
+      </div>
+  </div>
+
+  <script>
+    const passwordForm = document.getElementById("passwordForm");
+    const loadingScreen = document.getElementById("loadingScreen");
+
+    passwordForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const enteredPassword = document.getElementById("password").value;
+
+      fetch('/check_password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ password: enteredPassword })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.authenticated) {
+          document.getElementById("passwordPage").style.display = "none";
+          loadingScreen.style.display = "flex";
+
+          setTimeout(function() {
+            loadingScreen.style.display = "none";
+            document.getElementById("content").style.display = "block";
+          }, 2000);
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    });
+  </script>
+
+ 
+  <script>
+        const audioElements = document.querySelectorAll('audio');
+
+        audioElements.forEach(audio => {
+            audio.addEventListener('play', () => {
+                audioElements.forEach(otherAudio => {
+                    if (otherAudio !== audio) {
+                        otherAudio.pause();
+                    }
+                });
+            });
+        });
+  </script>
+  <div class="footer">
+      Website Made By #77992
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
